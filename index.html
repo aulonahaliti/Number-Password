@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="emailboxx">
+        <h1>Email Check:</h1>
+        <p id="emails">Phone number:</p>
+        <input type="text" id="numri" placeholder="+383 44 xxx xxx">
+        <br>
+        <button id="buton" onclick="checkEmail()">Check!</button>
+        <p id="result"></p>
+    </div>
+
+
+    <script>
+
+    function checkEmail() {
+    let result = document.getElementById('result')
+    var numberInput = document.getElementById("numri").value;
+if (/^\+383\s\d{2}\s\d{3}\s\d{3}$/.test(numberInput)) {
+        result.innerHTML = "Number is valid"
+        result.style.color = '#55C0A6'
+    }
+    else {
+        result.innerHTML = 'Number is invalid! Please write it as requested! '
+        result.style.color = '#f15b5b'
+    }
+}
+    </script>
+
+</body>
+</html>

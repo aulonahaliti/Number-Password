@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="emailboxx">
+        <h1>Pasword check:</h1>
+        <p id="emails">password here:</p>
+        <input type="password" id="numri" placeholder="Az123#@.%&!">
+        <br>
+        <button id="buton" onclick="checkEmail()">Check!</button>
+        <p id="result"></p>
+    </div>
+
+
+    <script>
+
+    function checkEmail() {
+    let result = document.getElementById('result')
+    var passwordInput = document.getElementById("numri").value;
+if (/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{8,}$/.test(passwordInput)) {
+        result.innerHTML = "Password is valid"
+        result.style.color = '#55C0A6'
+    }
+    else {
+        result.innerHTML = 'Password is invalid! Please write it as requested! '
+        result.style.color = '#f15b5b'
+    }
+}
+    </script>
+
+</body>
+</html>
